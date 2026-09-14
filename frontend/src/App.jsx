@@ -1,6 +1,13 @@
+import {router} from "./apps.routes.jsx"
+import {  RouterProvider } from 'react-router';
+import { AuthProvider } from "./features/auth/auth.context.jsx";
+
 function App(){
   return(<>
-  Jeet na hi hea aur koi option naihe hai tumare pass
+  <AuthProvider>
+<RouterProvider  router={router}/>
+  </AuthProvider>
+ 
   </>)
 }
 

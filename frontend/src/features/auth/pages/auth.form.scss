@@ -1,0 +1,31 @@
+main{
+  min-height:100vh;
+  width:100%;
+
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+
+  .input-groups{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .form-container{
+    min-width:350px;
+    flex-direction:column;
+    gap:1rem;
+  }
+
+  input{
+    border:none;
+    outline: none;
+    padding-inline:1rem;
+    padding-block:0.5rem;
+    border-radius:5px;
+  }
+
+}
