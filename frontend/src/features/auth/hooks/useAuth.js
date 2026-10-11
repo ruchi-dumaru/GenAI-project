@@ -11,7 +11,8 @@ export const useAuth = () => {
 
     try {
       const data = await login({ email, password });
-      setUser(data.user);
+      setUser(data?.user ?? null);
+      return Boolean(data?.user);
     } catch (err) {
       console.log(err);
     } finally {
@@ -24,7 +25,8 @@ export const useAuth = () => {
 
     try {
       const data = await register({ username, email, password });
-      setUser(data.user);
+      setUser(data?.user ?? null);
+      return Boolean(data?.user);
     } catch (err) {
       console.log(err);
     } finally {
@@ -37,11 +39,13 @@ export const useAuth = () => {
     try {
       const data = await logout();
       setUser(null);
+      return Boolean(data);
     } catch (err) {
       console.log(err);
     } finally {
       setLoading(false);
     }
   };
+
   return { user, loading, handleRegister, handleLogin, handleLogout };
 };
