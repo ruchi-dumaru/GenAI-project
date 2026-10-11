@@ -51,4 +51,5 @@ async function getMe() {
 }
 
 
+export { register, login, logout, getMe };
 export default { register, login, logout, getMe };
