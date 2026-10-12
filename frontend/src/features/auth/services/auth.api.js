@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:9000",
+  baseURL: "http://localhost:4000",
   withCredentials: true,
 });
 
-async function register({ username, email, password }) {
+export async function register({ username, email, password }) {
   try {
     const response = await api.post("/api/auth/register", {
       username,
@@ -19,7 +19,7 @@ async function register({ username, email, password }) {
   }
 }
 
-async function login({ email, password }) {
+export async function login({ email, password }) {
   try {
     const response = await api.post("/api/auth/login", {
       email,
@@ -32,24 +32,20 @@ async function login({ email, password }) {
   }
 }
 
-async function logout() {
+export async function logout() {
   try {
     const response = await api.get("/api/auth/logout");
+
     return response.data;
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 }
 
-async function getMe() {
+export async function getMe() {
   try {
     const response = await api.get("/api/auth/get-me");
+
     return response.data;
   } catch (err) {
     console.log(err);
   }
 }
-
-
-export { register, login, logout, getMe };
-export default { register, login, logout, getMe };
