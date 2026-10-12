@@ -14,8 +14,6 @@ app.use(cors({
 }))
 
 
-
-
 app.use('/api/auth',authRouter)
 app.use("/api/interview",interviewRouter)
 
