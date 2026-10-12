@@ -8,6 +8,10 @@ node_modules/
 .env.test
 .env.production
 
+# Local-only AI service files
+/backend/src/services/temp.js
+/backend/src/services/ai.service.js
+
 # React / frontend build folders
 build/
 dist/
